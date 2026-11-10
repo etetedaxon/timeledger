@@ -77,7 +77,7 @@ $('fullscreenBtn').onclick=async()=>{try{const target=document.querySelector('.r
 document.addEventListener('fullscreenchange',()=>{$('fullscreenBtn').textContent=document.fullscreenElement?'⤢ Exit full screen':'⛶ Full screen'});
 $('paragraphPrev').onclick=()=>{paragraphIndex=Math.max(0,paragraphIndex-1);renderPage()};$('paragraphNext').onclick=()=>{paragraphIndex++;renderPage()};
 $('rulerBtn').onclick=()=>{rulerEnabled=!rulerEnabled;$('readingRuler').classList.toggle('hidden',!rulerEnabled);$('rulerBtn').textContent='Reading ruler: '+(rulerEnabled?'on':'off')};
-$('readerText').addEventListener('pointermove',e=>{if(!rulerEnabled)return;const r=$('readerText').getBoundingClientRect(),top=e.clientY-r.top+$('readerText').scrollTop;$('readingRuler').style.top=top+'px'});
+$('readerText').addEventListener('pointermove',e=>{if(!rulerEnabled)return;const r=$('pdfPageWrap').getBoundingClientRect(),top=e.clientY-r.top+$('pdfPageWrap').scrollTop;$('readingRuler').style.top=top+'px'});
 $('speakBtn').onclick=()=>{if(!current||!pdf)return; if(!('speechSynthesis'in window)){toast('Read aloud is not supported in this browser.');return}speechSynthesis.cancel();const text=$('readerText').classList.contains('hidden')?'':$('readerText').innerText;const say=text||$('pdfCanvasHost').innerText||'';if(!say.trim()){toast('Switch to an accessible reading mode to read this page aloud.');return}const utterance=new SpeechSynthesisUtterance(say);utterance.rate=1; speechSynthesis.speak(utterance);toast('Reading aloud')};$('stopSpeakBtn').onclick=()=>{if('speechSynthesis'in window)speechSynthesis.cancel()};
 if(window.pdfjsLib)pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';init();
 })();
