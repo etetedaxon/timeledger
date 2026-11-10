@@ -33,7 +33,7 @@ const renderText=(txt)=>{let parts=[txt];for(const h of hs){parts=parts.flatMap(
 el.innerHTML=paragraphs.map((p,i)=>{const t=p.text.trim(),cls=/^[A-Z0-9\s:—-]{4,90}$/.test(t)?'tl-heading':/\b(means|refers to|is defined as|can be defined as)\b/i.test(t)?'tl-definition':/^(for example|e\.g\.|example:)/i.test(t)?'tl-example':'';return '<p class="reading-line '+cls+'" data-line="'+i+'" tabindex="'+(mode==='line'?'0':'-1')+'">'+renderText(t)+'</p>'}).filter((_,i)=>!paragraphMode||i===paragraphIndex).join('');
 el.classList.toggle('line-focus',mode==='line');el.classList.toggle('soft-reader',mode==='soft');
 el.style.fontSize=(mode==='large'?Math.max(22,settings.fontSize):settings.fontSize)+'px';el.style.lineHeight=String(settings.lineSpace/10);
-el.style.fontFamily=settings.fontFamily==='serif'?'Georgia,serif':settings.fontFamily==='dyslexic'?\"'Atkinson Hyperlegible',Verdana,sans-serif\":settings.fontFamily==='reader'?"'DM Sans',Arial,sans-serif":'Arial,sans-serif';
+el.style.fontFamily=settings.fontFamily==='serif'?'Georgia,serif':settings.fontFamily==='dyslexic'?"'Atkinson Hyperlegible',Verdana,sans-serif":settings.fontFamily==='reader'?"'DM Sans',Arial,sans-serif":'Arial,sans-serif';
 el.style.background=mode==='soft'?'#eeeadd':mode==='contrast'||settings.bg==='dark'?'#171b24':settings.bg==='cream'?'#f1e6ce':settings.bg==='white'?'#fff':settings.bg==='blue'?'#e8f1fb':settings.bg==='pink'?'#f8e9ed':'#f6f4ee';
 el.style.color=mode==='contrast'||settings.bg==='dark'?'#f8fafc':mode==='soft'?'#45463f':'#273449';
 el.style.maxWidth=(mode==='focus'||mode==='short')?'520px':'690px';el.style.letterSpacing=settings.letterSpacing+'px';el.style.wordSpacing=settings.wordSpacing+'px';el.style.setProperty('--paragraph-gap',settings.paragraphSpacing+'px');
