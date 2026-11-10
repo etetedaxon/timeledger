@@ -48,3 +48,5 @@
 .tl-distraction{display:block!important}
 .tl-distraction .reader-center{max-width:980px;margin:auto}
 @media(max-width:760px){.tl-scroll-wrap{max-height:70vh}}
+
+.doc-move-label{display:flex;align-items:center;gap:6px;margin-top:10px;font-size:9px;color:#8994a4}.doc-move-label select{min-width:0;flex:1;border:1px solid var(--line);border-radius:6px;padding:5px;background:#fff;color:#536078;font-size:9px}.stats{grid-template-columns:repeat(auto-fit,minmax(135px,1fr))}
