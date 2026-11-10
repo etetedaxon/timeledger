@@ -38,9 +38,9 @@
 @media(max-width:760px){.reader-center:fullscreen{padding:8px}.page-controls{flex-wrap:wrap}.paragraph-nav{flex-wrap:wrap}}
 
 /* TimeLedger reading support: paragraph semantics, focus, colour cues and continuous PDF */
-.reader-text .tl-heading{font-weight:800;color:#315cb7;border-bottom:1px solid #dfe6f4;padding-bottom:5px}
-.reader-text .tl-definition{border-left:3px solid #d39a37;background:#fff8e8;padding:8px 12px;border-radius:4px}
-.reader-text .tl-example{border-left:3px solid #4c9b7b;background:#edf8f2;padding:8px 12px;border-radius:4px}
+.reader-text.tl-colour .tl-heading{font-weight:800;color:#315cb7;border-bottom:1px solid #dfe6f4;padding-bottom:5px}
+.reader-text.tl-colour .tl-definition{border-left:3px solid #d39a37;background:#fff8e8;padding:8px 12px;border-radius:4px}
+.reader-text.tl-colour .tl-example{border-left:3px solid #4c9b7b;background:#edf8f2;padding:8px 12px;border-radius:4px}
 .reader-text.tl-colour .reading-line:not(.tl-heading):not(.tl-definition):not(.tl-example){color:inherit}
 .reader-text.tl-focus-mode .reading-line:focus,.reader-text.tl-focus-mode .reading-line:hover{opacity:1;background:#fff4c9;outline:2px solid #e5c55c}
 .tl-scroll-wrap{display:block;max-height:calc(100vh - 220px);overflow:auto;border:1px solid var(--line);border-radius:8px;background:#f1f3f8}
