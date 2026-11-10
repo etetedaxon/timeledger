@@ -1,18 +1,26 @@
-# TimeLedger
+# TimeLedger — PDF Reading Experience
 
-A local-first time logging dashboard prototype.
+A fresh PDF-first TimeLedger website.
 
-## Current features
-- Manually record activities, category, app/tool, duration, time and focused status.
-- Daily totals, focused time, category breakdown and a configurable daily goal.
-- Change date, delete entries and export all records to CSV.
-- Browser localStorage persistence and a basic offline service worker.
+## Current preview
+- Email-only local entry (not real authentication).
+- PDF files are read in-browser using PDF.js.
+- Documents, page progress, bookmarks, folders and notes are stored in browser localStorage.
+- Reading modes and typography controls are included as a first interface pass.
+- No server receives uploaded PDFs.
 
-## Run
-Open index.html in a browser or serve this folder with any static web server. No build step or environment variables are required.
+## Important limitations in this first build
+- Email entry is a local profile selector, not secure identity verification. Do not use it for private multi-user accounts yet.
+- PDF file bytes are stored in localStorage for this prototype. Browser storage is limited; a production build should move document bytes and metadata to IndexedDB.
+- The PDF is rendered as its original page canvas. Bold-leading text transformation, text selection/highlighting, annotation tools, and reliable text extraction are not implemented yet.
+- Reading time and pages read are a basic first pass, not a complete analytics engine.
+- Folder management is a simple classification, not nested folder/file management.
+- PDF.js and fonts load from public CDNs.
 
-## Important scope
-This is the first web dashboard/prototype, not the automatic phone tracker. A website cannot reliably monitor which other apps are in use. Automatic Android tracking requires a native Android app and Usage Access permission. iOS Screen Time tracking requires Apple's relevant APIs, entitlements and user authorization, and has platform limitations. App-level duration also cannot reliably determine what a person did inside an app (for example, educational vs entertainment video viewing). The first version therefore uses manual activity labels and corrections.
-
-## Privacy
-Entries are stored in this browser's localStorage. Clearing browser data can erase them. There is no account, cloud sync, central database or email collection in this prototype.
+## Next engineering steps
+1. Move file storage to IndexedDB and add import/export/backup.
+2. Implement PDF text layer for selection, highlights and bold-leading rendering.
+3. Add durable session accounting, page-level reading progress and document completion.
+4. Add real passwordless email authentication and private cloud sync only if desired; local-first mode remains available.
+5. Add screen-reader support, keyboard navigation, accessibility testing and mobile testing.
+6. Add PDF analysis and simplified learning assistant in a separate opt-in stage.
