@@ -54,3 +54,5 @@
 .reader-text.tl-colour .tl-heading{color:var(--tl-heading-color,#315cb7)}.reader-text.tl-colour .tl-definition{color:var(--tl-definition-color,#a65d16);border-left-color:var(--tl-definition-color,#a65d16)}.reader-text.tl-colour .tl-example{color:var(--tl-example-color,#217a70);border-left-color:var(--tl-example-color,#217a70)}.reader-text.tl-colour .tl-keypoint{color:var(--tl-keypoint-color,#7654a6);border-left:3px solid var(--tl-keypoint-color,#7654a6);background:#f5f0fb;padding:8px 12px;border-radius:4px}.tl-colour-settings{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:8px}.tl-colour-settings small{grid-column:1/-1;color:#8a94a4;font-size:9px}.tl-colour-settings label{display:flex;flex-direction:column;gap:4px;font-size:9px;color:#778397}.tl-colour-settings select{width:100%;border:1px solid var(--line);border-radius:6px;padding:6px;background:white;font-size:9px}
 
 .page-controls{height:auto;min-height:45px;flex-wrap:wrap;padding:8px;row-gap:7px}.reader-center:fullscreen .page-controls{position:sticky;top:0;z-index:10}
+
+.reader-text.line-focus .reading-line:focus{opacity:1;background:#fff2a8;color:#202b3b;outline:2px solid #e5c55c}
